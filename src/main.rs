@@ -4,10 +4,14 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     if args.len() > 1 {
-        println!("{} is not a valid option.", &args[1]);
-        return;
-    }
-
+        if args[1] == "install" {
+            println!("Install {}.", &args[2]);
+            return;
+        } else {
+            println!("{} is not a valid option.", &args[1]);
+            return;
+        }
+    }    
     println!("Moose - Package Manager for Bust");
     println!("================================");
     println!("moose install <package> - Install a Reef (package)");
